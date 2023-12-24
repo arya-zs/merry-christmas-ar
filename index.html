@@ -50,7 +50,7 @@
     </body>
 </html>
  -->
- <!doctype html>
+<!doctype html>
 <html>
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -75,6 +75,10 @@
                     id="animated-asset"
                     src="assets/asset.glb"
                 ></a-asset-item>
+                <a-asset-item
+                    id="second-model-asset"
+                    src="assets/christmas_tree.glb"  <!-- Path to your second model -->
+                ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -87,11 +91,21 @@
                 id="markerA"
             >
                 <a-entity
-                    id="bowser-model"
-                    position="0 0 0" 
+                    id="first-model"
+                    position="0 0 0"
                     scale="0.004 0.004 0.004"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+                
+                <a-entity
+                    id="second-model"
+                    position="0.5 0 0" 
+                    scale="0.004 0.004 0.004"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#second-model-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
